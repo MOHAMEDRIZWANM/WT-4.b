@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact us</title>
+</head>
+<style>
+    .class{
+        text-align: center;
+        
+    }
+    .container{
+        text-align: center;
+        align-items: center;
+        width: 40%;
+        /* margin-left: 450PX; */
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        background-color: #161515;
+        border-radius: 20px;
+        text-align: center;
+        align-items: center;
+    }
+    .forms{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        padding: 50px 50px 50px 50PX;
+        text-align: center;
+        align-items: center;
+        
+
+    }
+    H2,H3{
+        text-align: center;
+    }
+    body{
+        background-image: url(https://images.pexels.com/photos/2931286/pexels-photo-2931286.jpeg?auto=compress&cs=tinysrgb&w=600);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .center{
+        color: aqua;
+    }
+    #dep{
+        color:violet;
+
+    }
+    #check{
+        color: violet;
+    }
+    .sub{
+        color: #161515;
+    }
+   
+</style>
+<body >
+<center>
+    <h2 ><u>Forms</u></h2>
+    <div class="container">
+        <div class="forms">
+            <form action="" name="form" >
+                <label for="n" class="center" id="sample">Name</label> 
+                <input type="text" name="n" id="n" placeholder="Enter name"  autofocus class="end">
+                <br><br>
+                
+                <label for="e" class="center">Email</label>
+                <input type="email" name="email" id="e"  autofocus  placeholder="Enter email" class="end">
+                <br><br>
+
+                <label for="e" class="center">PassWord</label>
+                <input type="password" name="pass" id="p"  autofocus  placeholder="Enter email" class="end">
+                <br><br>
+
+                <label for="e" class="center">Confirm PassWord</label>
+                <input type="password" name="cp" id="cp"  autofocus  placeholder="Enter email" class="end">
+                <br><br>
+
+                <label for="num" class="center">Mobile Number</label>
+                <input type="tel" name="num" id="num" placeholder="000-000-0000" class="end">
+                <br><br>
+
+                <label  class="center">Gender</label>  
+                <input type="radio" name="gender" value="male" ><span id="check">Male</span>
+                <input type="radio" name="gender" value="female"><span id="check">Female</span>
+                <br><br>
+
+                <label for="check" class="center">Your Hobbies</label>
+                <input type="checkbox" name="check" id="check"><span id="check">Music</span>
+                <input type="checkbox" name="check" id="check"><span id="check">Gaming</span>
+                <input type="checkbox" name="check" id="check"><span id="check">Editing</span>
+                <br><br>
+
+                <label for="country" class="center" >Select your Department</label> 
+                <select name="" id="dep">
+                    <option value="">select the dept</option>
+                    <option value="ds">AIDS</option>
+                    <option value="ml">AIML</option>
+                    <option value="it">IT</option>
+                    <option value="CSE">CSE</option>
+                    <option value="it">IT</option>
+                </select>
+                <br><br>
+
+                <input type="submit" value="Submit" onclick="return validation()" class="sub"></input>
+            </form>
+        </div>
+    </div>
+</center>
+    <script>
+        function validation() {
+            const name=document.getElementById('n');
+            if(name.value==""){
+                alert("please enter your name?");
+                n.focus();
+             return false;
+            }
+            const Email=document.getElementById('e');
+            const Email_val=Email.value;
+            const re = /[@]/gi;
+            const matches=Email_val.match(re);
+            if(Email.value=="" && matches==true){
+                alert("please enter your Email");
+                Email.focus();
+             return false;
+            }
+            const Mob=document.getElementById('num');
+            if(Mob.value=="" || mob.value.length==10){
+                alert("please enter your number?");
+                Mob.focus();
+             return false;
+            }
+            const pass=document.getElementById('p');
+            if(pass.value==""){
+                alert("please enter your password?");
+                pass.focus();
+             return false;
+            }
+            const cpass=document.getElementById('cp');
+            if(cpass.value==""){
+                alert("Confirm your Password?");
+                cpass.focus();
+             return false;
+            }
+           const gender=document.form.gender.value;
+           if(gender==""){
+            alert("enter the gender.....")
+                return false
+           }
+           const dep=document.getElementById('dep').value;
+           console.log(dep);
+           if(dep==""){
+            alert("enter the department.....");
+            return false;
+           }
+           const Hobby=document.form.check;
+           var s=0;
+           for(let i=0;i<Hobby.length;i++){
+            if(Hobby[i].checked){
+                s=1;
+                break;
+            }}
+            if (s==0) {
+                alert("enter the interested Hobby.....")
+                return false
+            }
+
+        return true
+    
+        }
+    </script>
+</body>
+</html>
